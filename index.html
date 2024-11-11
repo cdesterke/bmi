@@ -86,7 +86,8 @@
                 category = "Obésité";
             }
 
-            document.getElementById("result").innerHTML = `Votre BMI est de ${bmi.toFixed(1)} (${category})`;
+            document.getElementById("bmiResult").innerHTML = `Votre BMI est de ${bmi.toFixed(1)}`;
+            document.getElementById("categoryResult").innerHTML = `Interprétation : ${category}`;
         }
     </script>
 </body>
