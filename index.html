@@ -60,7 +60,8 @@
 
         <button onclick="calculateBMI()">Calculer le BMI</button>
         
-        <div id="result"></div>
+        <div id="bmiResult"></div>
+        <div id="categoryResult"></div>
     </div>
 
     <script>
@@ -69,7 +70,8 @@
             const height = parseFloat(document.getElementById("height").value);
 
             if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
-                document.getElementById("result").innerHTML = "Veuillez entrer des valeurs valides.";
+                document.getElementById("bmiResult").innerHTML = "Veuillez entrer des valeurs valides.";
+                document.getElementById("categoryResult").innerHTML = "";  // Réinitialiser l'interprétation
                 return;
             }
 
@@ -86,6 +88,7 @@
                 category = "Obésité";
             }
 
+            // Afficher le résultat du BMI et l'interprétation sur des lignes distinctes
             document.getElementById("bmiResult").innerHTML = `Votre BMI est de ${bmi.toFixed(1)}`;
             document.getElementById("categoryResult").innerHTML = `Interprétation : ${category}`;
         }
